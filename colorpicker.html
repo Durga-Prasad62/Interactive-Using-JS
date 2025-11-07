@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <style>
+        html,body{
+            height: 100%;
+
+        }
+        button{
+           border-radius: 50px;
+           width:5%;
+           height:40px;
+           border:  2px solid blue;      
+        }
+        .btns{
+            display: flex;
+            justify-content: center;
+            gap:5px;
+        
+        }
+    @media (max-width: 980px) {
+    button {
+        width: 80px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .btns {
+        gap: 8px;
+    }
+}
+    @media (max-width: 768px) {
+    button {
+        width: 80px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .btns {
+        gap: 8px;
+    }
+}
+@media (max-width: 480px) {
+    .btns {
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        gap: 15px;
+    }
+
+    button {
+        width: 70%;
+        font-size: 16px;
+        height: 45px;
+    }
+}
+
+
+ </style>
+</head>
+<body>
+    <div class="btns">
+    <button onclick="redcolor()" type="button">Red</button>
+    <button onclick="orangecolor()" type="button">Orange</button>
+    <button  onclick="purplecolor()" type="button">Purple</button>
+    <button onclick="pinkcolor()" type="button">pink</button>
+    <button onclick="yellowcolor()" type="button">Yellow</button>
+     <button onclick="reset()" type="button">Reset</button>
+    </div>
+<script>
+    function  redcolor(){
+        document.body.style.background ="red"
+    }
+     function  yellowcolor(){
+        document.body.style.background ="yellow"
+    }
+     function  orangecolor(){
+        document.body.style.background ="orange"
+    }
+     function  pinkcolor(){
+        document.body.style.background ="pink"
+    }
+     function  purplecolor(){
+        document.body.style.background ="purple"
+    }
+    function reset(){
+           document.body.style.background ="white"
+    }
+
+
+  
+  
+</script>
+    
+</body>
+</html>
