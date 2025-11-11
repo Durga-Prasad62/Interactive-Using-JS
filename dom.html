@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM MANIPULATION</title>
+    <style>
+        #msg{
+            text-align: center;
+
+        }
+    
+    </style>
+</head>
+<body>
+    <p id="msg">Welcome Students</p>
+    <h1 class="h1"> Heading-1</h1>
+    <h2 id="h2">Heading-2</h2>
+    <h3>Heading-3</h3>
+    <ul>
+        <li>list-0</li>
+        <li>list-2</li>
+        <li>list-2</li>
+        <li>list-3</li>
+        <li>list-4</li>    
+    </ul>
+    
+    <script>
+        let c = document.querySelector("#msg")
+        c.innerText="Hello Welcome to college"
+        c.style.color="orange"
+        c.style.backgroundColor="pink"
+         c.style.fontSize="50px"
+        console.log(c)
+        let d = document.getElementsByClassName("h1")
+        console.log(d)
+        let e = document.getElementById("h2")
+        console.log(e)
+        let f = document.getElementsByTagName("h3")
+        console.log(f)
+        let g = document.querySelector("ul")
+        console.log(g)
+       
+
+    </script>
+   
+    
+</body>
+</html>
