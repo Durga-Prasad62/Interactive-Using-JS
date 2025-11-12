@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BULB ON/OFF</title>
+</head>
+
+
+<body>
+    <center>
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/OFFbulb.jpg" height="400px" width="400px"><br>
+  
+  <button onclick="onbulb()" type="button">ON</button>
+  <button onclick="offbulb()" type="button">OFF</button>
+</center>
+
+<script>
+  function onbulb() {
+    let bulbonimg = document.querySelector("img");
+    bulbonimg.src = "https://media.geeksforgeeks.org/wp-content/uploads/ONbulb.jpg";
+  }
+
+  function offbulb() {
+    let bulboffimg = document.querySelector("img");
+    bulboffimg.src = "https://media.geeksforgeeks.org/wp-content/uploads/OFFbulb.jpg";
+  }
+</script>
+
+    
+</body>
+</html>

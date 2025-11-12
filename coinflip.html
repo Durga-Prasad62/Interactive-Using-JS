@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toss</title>
+    <style>
+     body {
+         transition-delay: 5s;
+        transition: background-color 4s ease;
+     }
+
+     button {
+        border-radius: 50px;
+        border: 1px solid yellow;
+        padding: 8px 16px;
+        background-color: gold;
+        cursor: pointer;
+        transition: all 0.5s ease;
+     }   
+    </style>
+</head>
+<body>
+    <center>
+    <h1>Heads or Tails</h1>
+    <img src="https://mebuk.newgrouplinks.in/wp-content/uploads/2025/06/Rohit-tossing-coin.jpeg" height="300px"width="300px"><br>
+    <button onclick="Toss()" type="button">Flip The Coin</button>
+     </center>
+     <script>
+            backgroundcol = document.body.style.backgroundColor = "lightblue";
+            console.log(backgroundcol)
+          function Toss(){
+            backgroundcol = document.body.style.backgroundColor = "lightpink";
+            console.log(backgroundcol)
+            let num = Math.floor(Math.random() * 10) + 1;  
+            if (num%2 ==0){ 
+            let imageitem = document.getElementsByTagName("img")
+                console.log(imageitem[0].src="https://banknotecoinstamp.com/cdn/shop/products/302_92188f9e-1ddf-48cc-82be-f16451a8e480_1555x.jpg?v=1674642291")
+            }
+            else{
+                let imageitem = document.getElementsByTagName("img")
+                console.log(imageitem[0].src="https://banknotecoinstamp.com/cdn/shop/products/303_fb27f4dc-247b-4316-871a-2dc5bf406881_1024x1024.jpg?v=1674642291")
+            }
+        }
+      
+    
+
+     </script>
+    
+</body>
+
+</html>
