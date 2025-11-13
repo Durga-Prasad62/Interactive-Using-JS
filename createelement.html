@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        margin-top: 100px;
+    }
+
+    ul {
+      display: none;
+      margin-top: 20px;
+      padding: 0;
+    }
+
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+      margin-left: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+
+</head>
+<body>
+  <ul id="mylist"></ul><br>
+
+    <script>
+         const ul = document.querySelector("#mylist")
+         const items = ["html","css","javascript","react","django","ai","ml"]
+         
+        for (let tech of items){
+            const li = document.createElement("li")
+            li.textContent = tech
+            ul.appendChild(li) 
+            document.body.style.textAlign = "center";            
+        }
+        let b1 = document.createElement("button")
+        b1.innerHTML ="ADD LIST"
+        document.body.appendChild(b1)
+            b1.onclick = function () {
+           ul.style.display = "block";
+           document.body.appendChild(ul);
+    };
+
+        
+
+
+        let b2 = document.createElement("button")
+        b2.innerHTML ="REMOVE LIST"
+        document.body.appendChild(b2)
+        b2.onclick = function (){
+            document.body.removeChild(ul)
+        }
+
+
+
+      
+
+        
+
+
+    </script>
+    
+</body>
+</html>
