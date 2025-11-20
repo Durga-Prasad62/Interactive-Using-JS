@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button</title>
+</head>
+<body>
+    <h1 id="heading">
+        This is First Heading
+    </h1>
+    
+</body>
+<script>
+    let btn_ele = document.createElement("button")
+    btn_ele.innerText = "Click Me"
+   
+    btn_ele.addEventListener("click",function(){
+     let h2 = document.getElementbyId("heading")
+     h2.style.color = "blue"
+    })
+   document.body.appendChild(btn_ele)
+
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+    width: 200px;
+    height: 200px;
+    background-color: lightgrey;
+}
+
+    </style>
+</head>
+<body>
+<script>
+    let div_ct = document.createElement("div")
+    div_ct.innerHtml = "click"
+    div_ct.classList.add("container")
+    div_ct.tabIndex = 0; 
+    
+    div_ct.addEventListener("click",function(){
+        div_ct.style.backgroundColor = "red"
+    })
+    div_ct.addEventListener("dblclick",function(){
+        div_ct.style.backgroundColor = "blue"
+    })
+      div_ct.addEventListener("mouseover",function(){
+        div_ct.style.backgroundColor = "blue"
+    })
+        div_ct.addEventListener("mouseout",function(){
+        div_ct.style.backgroundColor = "lightgrey"
+    })
+       div_ct.addEventListener("keypress",function(){
+        div_ct.style.backgroundColor = "yellow"
+    })
+    document.body.appendChild(div_ct)
+
+</script>
+
+
+
+    
+</body>
+</html>
