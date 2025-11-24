@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(to right, red, yellow);
+        }
+        .container{
+            width: 500px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        #counter{
+            font-size: 30px;
+        }
+        button{
+             font-size: 24px;
+             padding: 24px;
+             border: 2px solid blue;
+        }
+        button:disabled{
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 id="counter"> 0 </h3>
+        <button id="plusbtn">+</button>
+        <button id ="minusbtn">-</button>
+
+    </div>
+    <script>
+        let counter = 0
+        const counterElement = document.getElementById("counter")
+        const plusBtn = document.getElementById('plusbtn')
+        const MinusBtn = document.getElementById('minusbtn')
+        plusBtn.addEventListener('click',()=>{
+            counter += 1
+           counterElement .textContent = counter
+        })
+        MinusBtn.addEventListener('click',()=>{
+            counter -= 1
+          counterElement .textContent = counter
+           
+        })
+    </script>
+</body>
+</html>
