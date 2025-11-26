@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        }
+
+        .auth-box {
+            width: 330px;
+            height: 350px;
+            padding: 25px;
+            border-radius: 12px;
+            background: #ffffffee;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .auth-box h2 {
+            margin-bottom: 20px;
+            color: #222;
+            font-size: 22px;
+        }
+
+        .auth-box input {
+            width: 92%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+            font-size: 15px;
+        }
+        select{
+             width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+            font-size: 15px;
+            color: gray;
+        }
+         select:focus{
+               border-color: #6a11cb;
+          
+        }
+
+        .auth-box input:focus {
+            border-color: #6a11cb;
+        }
+
+        .auth-box button {
+            width: 100%;
+            padding: 12px;
+            background: #6a11cb;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            margin-top: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .auth-box button:hover {
+            background: #530fa4;
+        }
+
+        .auth-box p {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .auth-box a {
+            color: #6a11cb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .auth-box a:hover {
+            text-decoration: underline;
+        }
+        /* ============================= */
+/* RESPONSIVE MEDIA QUERIES FOR LOGIN PAGE */
+/* ============================= */
+
+/* Large Tablets / Small Laptops */
+@media (max-width: 1024px) {
+    .auth-box {
+        width: 300px;
+        height: auto;
+        padding: 20px;
+    }
+
+    .auth-box h2 {
+        font-size: 20px;
+    }
+
+    .auth-box input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .auth-box button {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .auth-box p {
+        font-size: 13px;
+    }
+}
+
+/* Tablets / iPad */
+@media (max-width: 768px) {
+    .auth-box {
+        width: 280px;
+        padding: 18px;
+    }
+
+    .auth-box h2 {
+        font-size: 18px;
+    }
+
+    .auth-box input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .auth-box button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .auth-box p {
+        font-size: 12px;
+    }
+}
+
+/* Large Phones / Small Tablets */
+@media (max-width: 576px) {
+    body {
+        padding: 10px;
+    }
+
+    .auth-box {
+        width: 100%;
+        max-width: 260px;
+        padding: 15px;
+    }
+
+    .auth-box h2 {
+        font-size: 16px;
+    }
+
+    .auth-box input {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .auth-box button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .auth-box p {
+        font-size: 12px;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 400px) {
+    .auth-box {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .auth-box h2 {
+        font-size: 15px;
+    }
+
+    .auth-box input {
+        padding: 7px;
+        font-size: 12px;
+    }
+
+    .auth-box button {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .auth-box p {
+        font-size: 11px;
+    }
+}
+
+        
+    </style>
+</head>
+<body>
+
+<div class="auth-box">
+    <h2>Login</h2>
+    <form id="form">
+
+    <input type="text" id="loginName" placeholder="Enter username" autocomplete="off">
+    <input type="email" id="email" placeholder="Enter email" autocomplete="off">
+    <select name="information" id="category">
+         <option value ="select" selected disabled>---SELECTED---</option>
+        <option value="student">Student</option>
+        <option value="Developer">Developer</option>
+        <option value ="Teacher">Teacher</option>
+    </select>
+    <button type="submit" >Submit</button>
+    </form>
+</div>
+<script>
+    let form_element =  document.getElementById("form")
+    let input_elements = document.getElementsByTagName("input")
+    input_elements[0].addEventListener("focus",function(e){
+          console.log(" input gets focus")
+    })
+      input_elements[1].addEventListener("blur",function(e){
+          console.log("Name must be ≥ 3 characters")
+          console.log("Email must include @")
+    })
+        let category_ele =  document.getElementById("category")
+        category_ele .addEventListener("change",function(e){
+            console.log(e.target.value)
+        })
+        form_element.addEventListener("submit",function(e){
+        console.log(input_elements) 
+        e.preventDefault()
+        console.log("sumbitting")        
+        })
+        
+</script>
+
+</body>
+</html>

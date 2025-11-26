@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI TASK</title>
+</head>
+<body>
+
+    <form id="form_element">
+        <input type="text" id="name" placeholder="Enter your name">
+        <p id="error" ></p>
+        <button type="submit">SUBMIT</button>
+    </form>
+
+    <script>
+        let input_elem = document.getElementById("name");
+        let form_element = document.getElementById("form_element");
+        let error_msg = document.getElementById("error");
+        form_element.addEventListener('submit', function (e) {
+
+            if (input_elem.value.trim() === "") {
+
+                error_msg.innerHTML = "❌ Name is required";
+                input_elem.style.border = "2px solid red";
+
+                e.preventDefault();
+            } 
+            else if( input_elem.value.length <3){
+                  error_msg.innerHTML = "⚠️ Name must be at least 3 characters" ;
+                  error_msg.style.color = "green";
+                 e.preventDefault();           
+            }
+            else {
+                error_msg.innerHTML =  `Welcome, ${input_elem.value}`
+                error_msg.style.color = "green";
+                 e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

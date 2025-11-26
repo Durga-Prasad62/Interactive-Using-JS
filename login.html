@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Details</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <h2>Login Details</h2>
+    <form  id ="form" >
+        <input type = "text"  placeholder="enter your name"><br>
+        <input type = "email"  placeholder="enter your gmail"><br>
+        <button type="submit" id="submitbtn">Submit</button>
+    </form>
+    <script>
+        // let formelement = document.getElementById("form")
+        // formelement.addEventListener("focus",function(e){
+        // let input_elements = document.getElementsByTagName("input")
+        // console.log(input_elements)
+        // e.preventDefault()
+        // console.log("your are entering a your name")        
+        // })
+
+        // let formelement = document.getElementById("form")
+        // let input_elements = document.getElementsByTagName("input")
+        // formelement.addEventListener("submit",function(e){
+        // console.log(input_elements) 
+        // e.preventDefault()
+        // console.log("your are entering a your name")        
+        // })
+
+        // //  let formelement = document.getElementById("form")
+        // //  let input_elements = document.getElementsByTagName("input")
+        // // formelement.addEventListener("click",function(e){
+        // // console.log(input_elements) 
+        // // e.preventDefault()
+        // // console.log("your are entering a your name")        
+        // })
+
+           let formelement = document.getElementById("form")
+           let input_elements = document.getElementsByTagName("input")
+           input_elements[0].addEventListener("focus",function (e){
+           console.log("please enter your name")
+        
+       })
+    
+           input_elements[1].addEventListener("blur",function (e){
+           console.log(" enter valid email")
+        
+       })
+             
+    </script>
+    
+</body>
+</html>

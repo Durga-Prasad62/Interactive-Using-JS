@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .div1 {
+            min-height: 40px;
+            width: 300px;
+            border: 2px solid blue;
+            margin: 15px auto;
+            padding: 10px;
+            font-size: 16px;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input id="input_box" placeholder="Enter todo (comma separated)">
+    
+    <!-- Buttons and Logic -->
+    <script>
+        let input_elem = document.getElementById("input_box");
+        input_elem.style.cssText = "height:30px;width:250px;margin-bottom:10px;padding:3px;";
+        let line_break = document.createElement("br")
+        document.body.appendChild(line_break)
+
+        let todos = [];  // store todo items
+
+        // Create Buttons
+        let add_button = document.createElement("button");
+        add_button.innerHTML = "Add First";
+        add_button.style.cssText = "height:30px;width:110px;margin:5px;";
+        document.body.appendChild(add_button);
+
+        let add_last_button = document.createElement("button");
+        add_last_button.innerHTML = "Add Last";
+        add_last_button.style.cssText = "height:30px;width:110px;margin:5px;";
+        document.body.appendChild(add_last_button);
+
+           let line_break1 = document.createElement("br")
+        document.body.appendChild(line_break1)
+
+        let del_button = document.createElement("button");
+        del_button.innerHTML = "Delete First";
+        del_button.style.cssText = "height:30px;width:110px;margin:5px;";
+        document.body.appendChild(del_button);
+
+        let del_last_button = document.createElement("button");
+        del_last_button.innerHTML = "Delete Last";
+        del_last_button.style.cssText = "height:30px;width:110px;margin:5px;";
+        document.body.appendChild(del_last_button);
+    </script>
+
+    <!-- One and Only DIV -->
+    <div id="show"></div>
+
+    <!-- Render + Button Events -->
+    <script>
+        let div_element = document.getElementById("show");
+        div_element.classList.add("div1");
+
+        function renderTodos() {
+            // Combine output into one comma-separated line
+            div_element.innerHTML = todos.join(", ");
+        }
+
+        // Add to start when user enters comma separated values
+        add_button.addEventListener("click", () => {
+            if (input_elem.value.trim() === "") return;
+            let items = input_elem.value.split(",");
+            items.forEach(i => {
+                todos.unshift(i.trim());
+            });
+            input_elem.value = "";
+            renderTodos();
+        });
+
+        // Add to end
+        add_last_button.addEventListener("click", () => {
+            if (input_elem.value.trim() === "") return;
+            let items = input_elem.value.split(",");
+            items.forEach(i => {
+                todos.push(i.trim());
+            });
+            input_elem.value = "";
+            renderTodos();
+        });
+
+        //  Delete first item
+        del_button.addEventListener("click", () => {
+            if (todos.length === 0) return;
+            todos.shift();
+            renderTodos();
+        });
+
+        // Delete last item
+        del_last_button.addEventListener("click", () => {
+            if (todos.length === 0) return;
+            todos.pop();
+            renderTodos();
+        });
+    </script>
+
+</body>
+</html>
